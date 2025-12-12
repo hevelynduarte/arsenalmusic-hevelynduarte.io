@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Arsenal Music</title>
+
+    <style>
+        body {
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1 {
+            color: #00c468;
+            margin-bottom: 5px;
+
+        }
+
+        h4 {
+            color: #000000;
+            margin-top: 0;
+        }
+        p {
+            color: #000000;
+        }
+
+        div {
+            width: 60%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgb(255, 246, 246);
+           
+        }
+        legend {
+            color: #000000;
+        }
+
+        label {
+            font-weight: bold;
+            color: #000000;
+        }
+
+        input, select {
+            width: 80%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        .titulo-led {
+            font-size: 40px;
+            color: #00ff55;
+            text-transform: uppercase;
+            text-shadow: 0 0 5px #00ff55 
+            0 0 10px #00ff55
+            0 0 20px #00ff55
+            0 0 40px #00ff55;
+            animation: pulsar 1.5s infinite alternate;
+        }
+        @keyframes pulsar {
+            from {
+            text-shadow:
+             0 0 5px #00ff55,
+             0 0 10px #00ff55;
+            }
+            to {
+                text-shadow: 0 0 20px #00ff55
+                0 0 10px #00ff55,
+                0 0 40px #00ff55;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 titulo-led>Arsenal Music</h1>
+    <h4>Aqui, você explora a diversidade musical em um só lugar.</h4>
+
+    <p>Preencha os campos para buscar músicas por nome, artista, ano ou gênero.</p>
+
+    <form>
+        <fieldset>
+            <legend><b>Buscar Música</b></legend>
+
+            <label for="nomeMusica">Nome da música:</label><br>
+            <input id="nomeMusica" type="text" placeholder="Ex: Evidências"><br><br>
+
+            <label for="artista">Artista:</label><br>
+            <input id="artista" type="text" placeholder="Ex: Djavan"><br><br>
+
+            <label for="ano">Ano de lançamento:</label><br>
+            <input id="ano" type="number" min="1900" max="2025" placeholder="Ex: 1980"><br><br>
+
+            <label for="genero">Gênero musical:</label><br>
+            <select id="genero">
+                <option value="">Selecione...</option>
+                <option>Samba</option>
+                <option>MPB</option>
+                <option>Forró</option>
+                <option>Funk</option>
+                <option>Pop</option>
+                <option>Rock</option>
+                <option>Sertanejo</option>
+            </select><br><br>
+
+            <button type="submit">Pesquisar</button>
+        </fieldset>
+    </form>
+
+</body>
+</html>

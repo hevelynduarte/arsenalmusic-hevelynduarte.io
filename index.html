@@ -1,177 +1,189 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Arsenal Music</title>
+<meta charset="UTF-8">
+<title>Arsenal Music</title>
 
-    <style>
-
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-}
-
-.container {
-    width: 1200px;
-    margin: auto;
-}
-
-
-@media (max-width: 1024px) {
-    .container {
-        width: 90%;
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        width: 100%;
-        padding: 10px;
-    }
-
-    nav {
-        flex-direction: column;
-    }
-
-    .menu {
-        display: block;
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
         text-align: center;
+        margin: 0;
+        padding: 0;
     }
-}
 
-@media (max-width: 480px) {
     h1 {
-        font-size: 1.5rem;
+        color: #00a859;
+        margin-top: 20px;
     }
 
-    p {
-        font-size: 1rem;
+    .box {
+        background: white;
+        width: 60%;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 10px;
     }
-}
-        body {
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-        }
 
-        h1 {
-            color: #00c468;
-            margin-bottom: 5px;
+    input, select {
+        width: 80%;
+        padding: 8px;
+        margin: 5px 0;
+    }
 
-        }
+    button {
+        padding: 10px 20px;
+        background: #00a859;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 
-        h4 {
-            color: #000000;
-            margin-top: 0;
-        }
-        p {
-            color: #000000;
-        }
+    button:hover {
+        background: #007a40;
+    }
 
-        div {
-            width: 60%;
-            margin: 20px auto;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: rgb(255, 246, 246);
-            border: 1px solid #ccc;
-        }
-        legend {
-            color: #000000;
-        }
+    .musica {
+        text-align: left;
+        margin-top: 15px;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
 
-        label {
-            font-weight: bold;
-            color: #000000;
+    @media (max-width: 768px) {
+        .box {
+            width: 90%;
         }
-
-        input, select {
-            width: 80%;
-            padding: 8px;
-            margin-top: 5px;
-        }
-
-        button {
-            margin-top: 15px;
-            padding: 10px 20px;
-            border: none;
-            background-color: #333;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #555;
-        }
-        .titulo-led {
-            font-size: 40px;
-            color: #00ff55;
-            text-transform: uppercase;
-            text-shadow: 0 0 5px #00ff55 
-            0 0 10px #00ff55
-            0 0 20px #00ff55
-            0 0 40px #00ff55;
-            animation: pulsar 1.5s infinite alternate;
-        }
-        @keyframes pulsar {
-            from {
-            text-shadow:
-             0 0 5px #00ff55,
-             0 0 10px #00ff55;
-            }
-            to {
-                text-shadow: 0 0 20px #00ff55
-                0 0 10px #00ff55,
-                0 0 40px #00ff55;
-            }
-        }
-        fieldset {
-            border: none;
-        }
-     
-        
-    </style>
+    }
+</style>
 </head>
 
 <body>
-    <h1 titulo-led>Arsenal Music</h1>
-    <h4>Aqui, você explora a diversidade musical em um só lugar.</h4>
 
-    <p>Preencha os campos para buscar músicas por nome, artista, ano ou gênero.</p>
+<h1>🎵 Arsenal Music</h1>
+<p>Catálogo musical para explorar artistas e canções</p>
 
-    <form>
-        <fieldset>
-            <legend><b>Buscar Música</b></legend>
-<BR>
-            <label for="nomeMusica">Nome da música:</label><br>
-            <input id="nomeMusica" type="text" placeholder="Ex: Evidências"><br><br>
+<div class="box">
+    <form id="form-musica">
+        <input type="text" id="nome" placeholder="Nome da música"><br>
+        <input type="text" id="artista" placeholder="Artista"><br>
+        <input type="number" id="ano" placeholder="Ano"><br>
 
-            <label for="artista">Artista:</label><br>
-            <input id="artista" type="text" placeholder="Ex: Djavan"><br><br>
+        <select id="genero">
+            <option value="">Gênero</option>
+            <option>MPB</option>
+            <option>Sertanejo</option>
+            <option>Forró</option>
+            <option>Rock</option>
+            <option>Pop</option>
+        </select><br><br>
 
-            <label for="ano">Ano de lançamento:</label><br>
-            <input id="ano" type="number" min="1900" max="2025" placeholder="Ex: 1980"><br><br>
-
-            <label for="genero">Gênero musical:</label><br>
-            <select id="genero">
-                <option value="">Selecione...</option>
-                <option>Samba</option>
-                <option>MPB</option>
-                <option>Forró</option>
-                <option>Funk</option>
-                <option>Pop</option>
-                <option>Rock</option>
-                <option>Sertanejo</option>
-                <option>Gospel</option>
-            </select><br><br>
-
-            <button type="submit">Pesquisar</button>
-        </fieldset>
+        <button type="submit">Pesquisar</button>
     </form>
+</div>
+
+<div class="box" id="resultado"></div>
+
+<script>
+    const form = document.getElementById("form-musica");
+    const resultado = document.getElementById("resultado");
+
+    const musicas = [
+        {
+            nome: "Evidências",
+            artista: "Chitãozinho & Xororó",
+            ano: 1990,
+            genero: "Sertanejo",
+            link: "https://www.letras.mus.br/chitaozinho-e-xororo/768469/significado.html"
+        },
+        {
+            nome: "Samurai",
+            artista: "Djavan",
+            ano: 1982,
+            genero: "MPB",
+            link: "https://www.letras.mus.br/djavan/11342/significado.html"
+        },
+        {
+            nome: "Asa Branca",
+            artista: "Luiz Gonzaga",
+            ano: 1947,
+            genero: "Forró",
+            link: "https://www.letras.mus.br/luiz-gonzaga/47081/significado.html"
+        },
+        {
+            nome: "Alma de guerreiro",
+            artista: "Seu jorge",
+            ano: 2012,
+            genero:"Samba//MPB",
+            link:"https://www.letras.mus.br/seu-jorge/alma-de-guerreiro/significado.html",
+        },
+        {
+            nome:"Construção",
+            artista:"Chico Buarque",
+            ano: 1971,
+            genero:"MPB",
+            link:"https://www.letras.mus.br/chico-buarque/45124/significado.html"
+        },
+        {
+            nome:"Aquarela",
+            artista:"Chico Buarque",
+            ano: 1983,
+            genero:"MPB",
+            link:"https://www.letras.mus.br/toquinho/49095/significado.html"
+        },
+        {
+            nome:"Feira de Mangaio",
+            artista:"Sivuca",
+            ano: 1979,
+            genero:"Forró",
+            link:"https://www.letras.mus.br/sivuca/765540/significado.html"
+        },
+    ];
+
+    function mostrarMusicas(lista) {
+        resultado.innerHTML = "";
+
+        if (lista.length === 0) {
+            resultado.innerHTML = "<p>Nenhuma música encontrada.</p>";
+            return;
+        }
+
+        lista.forEach(musica => {
+            resultado.innerHTML += `
+                <div class="musica">
+                    <strong>${musica.nome}</strong><br>
+                    Artista: ${musica.artista}<br>
+                    Ano: ${musica.ano}<br>
+                    Gênero: ${musica.genero}<br>
+                    <a href="${musica.link}" target="_blank">Ver significado</a>
+                </div>
+            `;
+        });
+    }
+
+ 
+    mostrarMusicas(musicas);
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const nome = document.getElementById("nome").value.toLowerCase();
+        const artista = document.getElementById("artista").value.toLowerCase();
+        const ano = document.getElementById("ano").value;
+        const genero = document.getElementById("genero").value;
+
+        const filtradas = musicas.filter(musica =>
+            (nome === "" || musica.nome.toLowerCase().includes(nome)) &&
+            (artista === "" || musica.artista.toLowerCase().includes(artista)) &&
+            (ano === "" || musica.ano == ano) &&
+            (genero === "" || musica.genero === genero)
+        );
+
+        mostrarMusicas(filtradas);
+    });
+</script>
 
 </body>
 </html>
